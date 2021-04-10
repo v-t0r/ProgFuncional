@@ -247,12 +247,6 @@ ataca_lista (x1,y1) ((x2,y2):t)
     |ataca (x1,y1) (x2,y2) = True
     |otherwise = ataca_lista (x1,y1) t
     
-alguemSeAtaca::[(Int,Int)]->Bool
-alguemSeAtaca [(_,_)] = False
-alguemSeAtaca ((x1,y1):t)
-    |ataca_lista (x1,y1) t = True
-    |otherwise = alguemSeAtaca t
-
 tc_sublista::[(Int,Int)]->[Int]
 tc_sublista [] = []
 tc_sublista ((x,y):t) = y:(tc_sublista t)
